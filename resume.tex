@@ -1,0 +1,116 @@
+% Resume V2 -- based on Ravi's current resume and confirmed project details.
+% Original template attribution: Jake Gutierrez; based on sb2nov/resume (MIT).
+\documentclass[letterpaper,12pt]{article}
+\usepackage[margin=0.6in]{geometry}
+\usepackage{charter}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{iftex}
+\ifPDFTeX
+  \input{glyphtounicode}
+  \pdfgentounicode=1
+\fi
+
+% Increase each used text size by one point from the previous version.
+\renewcommand{\small}{\fontsize{11}{13}\selectfont}
+\renewcommand{\large}{\fontsize{13}{15}\selectfont}
+\renewcommand{\Huge}{\fontsize{25.88}{31}\selectfont}
+
+\pagestyle{empty}
+\urlstyle{same}
+\raggedright
+\raggedbottom
+\setlength{\parindent}{0pt}
+\setlength{\tabcolsep}{0pt}
+\titleformat{\section}{\large\scshape}{}{0em}{}[\titlerule]
+\titlespacing*{\section}{0pt}{9pt}{5pt}
+\setlist[itemize]{leftmargin=0.17in, itemsep=0pt, parsep=0pt, topsep=3pt, partopsep=0pt, before=\fontsize{11}{15}\selectfont}
+
+\newcommand{\metric}[1]{\textbf{#1}}
+
+\newcommand{\role}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#1} & #2 \\
+    \textit{\small #3} & \textit{\small #4}
+  \end{tabularx}%
+}
+
+\newcommand{\employment}[4]{%
+  \begin{tabularx}{\textwidth}{@{}X r@{}}
+    \textbf{#3} & {\small #4} \\
+    {\small\textit{#1}} & {\small #2}
+  \end{tabularx}%
+}
+
+\begin{document}
+
+\begin{center}
+  {\Huge\bfseries Ravi Mishra}\\[4pt]
+  {\small Android \& Mobile Product Engineer}\\[3pt]
+  \small +91 7678607105 $|$
+  \href{mailto:mishravi2270@gmail.com}{mishravi2270@gmail.com} $|$
+  \href{https://ravimishra2270.github.io/}{Website} $|$
+  \href{https://www.linkedin.com/in/ravi-mishra-android-dev/}{LinkedIn} $|$
+  \href{https://github.com/ravimishra07}{GitHub}
+\end{center}
+\vspace{-8pt}
+
+\section{Experience}
+\employment{Software Technologist}{Nov 2025 -- Jul 2026}
+  {Philips Healthcare}{Bengaluru, India}
+\begin{itemize}
+  \item Implemented a \textbf{major architectural upgrade} of Pregnancy+ Android, moving from a mother-centric model to multiple pregnancy and baby profiles.
+  \item Redesigned \textbf{database structures and data classes} across the app to support the new multi-profile architecture.
+  \item Migrated legacy \textbf{Parse-based persistence to Room} as part of the end-to-end app and data model overhaul.
+\end{itemize}\vspace{4pt}
+
+\employment{Senior Software Engineer -- Android}{Jun 2024 -- Apr 2025}
+  {Wayo (BluSmart)}{Gurugram, India}
+\begin{itemize}
+  \item Developed and launched the \textbf{wallet module} with an end-to-end withdrawal flow.
+  \item Implemented transaction history and secure bank account linking within the wallet experience.
+  \item Introduced \textbf{Jetpack Compose}, migrating approximately \metric{35\%} of the UI from the existing implementation.
+\end{itemize}\vspace{4pt}
+
+\employment{Software Development Engineer -- Android}{Mar 2022 -- Nov 2023}
+  {Loco}{Bengaluru, India}
+\begin{itemize}
+  \item Built \textbf{Loco Clips}, a short-video feature, from scratch; reached \metric{100K+} unique users.
+  \item Implemented video trimming and upload flows supporting \metric{3,000+} uploaded clips, alongside feed autoplay.
+  \item Integrated \textbf{banner ads} across the app to support monetization.
+\end{itemize}\vspace{4pt}
+
+\employment{Android Developer}{Apr 2021 -- Mar 2022}
+  {Amar Ujala -- Safalta.com}{Noida, India}
+\begin{itemize}
+  \item Improved app reliability, increasing crash-free sessions from \metric{96\%} to \metric{99\%}.
+  \item Developed and launched mock tests used for \metric{60,000+} test completions.
+  \item Improved video playback performance and reliability; video views increased \metric{25\%}.
+\end{itemize}\vspace{4pt}
+
+\section{Projects}
+\role{Steadyline -- Bipolar Mood Tracker}{\small
+  \href{https://steadyline.app}{Website} $|$
+  \href{https://apps.apple.com/app/steadyline-bipolar-tracker/id6763089476}{App Store} $|$
+  \href{https://play.google.com/store/apps/details?id=com.ravimishra.samapp}{Google Play}}
+  {Native Android and iOS apps; Kotlin Multiplatform shared core}{}
+\begin{itemize}
+  \item Built and launched Android and iOS apps for mood, sleep, and medication tracking, used by \metric{1,000+} users.
+  \item Shared business logic through \textbf{Kotlin Multiplatform}; built offline storage and cloud sync that preserves conflicting edits.
+  \item Built \textbf{Ask SAM} to answer questions from saved health logs, with AI opt-in, local answers, and server-side usage limits.
+  \item Built \textbf{AI-ranked insights} from health history and a \textbf{correlation view} for tracked factors and next-day comparisons.
+\end{itemize}\vspace{4pt}
+
+\section{Technical Skills}
+\small
+\textbf{Mobile:} Kotlin, Java, Swift, Jetpack Compose, SwiftUI, Kotlin Multiplatform\\[2pt]
+\textbf{Architecture \& data:} Coroutines, MVVM, Hilt/Dagger, Koin, Room, SQLDelight
+
+\section{Education}
+\role{IET MJP Rohilkhand University}{2015 -- 2019}
+  {B.Tech., Electronics and Communication Engineering}{Bareilly, India}
+
+\end{document}

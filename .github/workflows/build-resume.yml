@@ -1,0 +1,40 @@
+name: Build resume PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - resume.tex
+      - .github/workflows/build-resume.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: resume-pdf
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install XeLaTeX
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends texlive-xetex texlive-fonts-recommended
+      - name: Compile current source
+        run: |
+          mkdir -p build
+          xelatex -interaction=nonstopmode -halt-on-error -output-directory=build -jobname=Ravi-Mishra-Resume resume.tex
+          cp build/Ravi-Mishra-Resume.pdf Ravi-Mishra-Resume.pdf
+      - name: Save PDF
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add Ravi-Mishra-Resume.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m 'Build current resume PDF'
+            git push
+          fi
